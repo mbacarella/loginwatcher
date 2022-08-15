@@ -11,11 +11,11 @@ it will ban the IP address from speaking to the server altogether.
 Configuring settings
 ----
 
-There are two sections to customize. Find the `Settings' module near the top of
-`Worker.fs'. One group of settings are for the SMTP service. The service
+There are two sections to customize. Find the `Settings` module near the top of
+`Worker.fs`. One group of settings are for the SMTP service. The service
 will send you periodic updates on what it's doing.
 
-Also, add a few known good IPs to `ipWhitelist'. Those will never be banned no
+Also, add a few known good IPs to `ipWhitelist`. Those will never be banned no
 matter how many failed login attempts. This is mostly a sanity check so that the
 admin doesn't accidentally get locked out somehow.
 
