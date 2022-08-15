@@ -234,9 +234,9 @@ module Work =
         let nTracked = state.LogonFails.Count in
         let nUsers = state.UserSeenIps.Count in
         let loggedInUsers =
-          List.map (fun user ->
-            let ips = String.concat "," state.UserSeenIps.[user] in
-            sprintf " %s: %s" user ips)
+          List.map (fun usr ->
+            let ips = String.concat "," state.UserSeenIps.[usr] in
+            sprintf " %s: %s" usr ips)
             (List.ofSeq state.UserSeenIps.Keys)
         in      
         sprintf "STATUS UPDATE: %d banned ips, %d tracked; %d users\n%s"
