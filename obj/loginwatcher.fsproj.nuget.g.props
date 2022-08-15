@@ -4,25 +4,22 @@
     <RestoreSuccess Condition=" '$(RestoreSuccess)' == '' ">True</RestoreSuccess>
     <RestoreTool Condition=" '$(RestoreTool)' == '' ">NuGet</RestoreTool>
     <ProjectAssetsFile Condition=" '$(ProjectAssetsFile)' == '' ">$(MSBuildThisFileDirectory)project.assets.json</ProjectAssetsFile>
-    <NuGetPackageRoot Condition=" '$(NuGetPackageRoot)' == '' ">$(UserProfile)\.nuget\packages\</NuGetPackageRoot>
-    <NuGetPackageFolders Condition=" '$(NuGetPackageFolders)' == '' ">C:\Users\Michael.Bacarella\.nuget\packages\</NuGetPackageFolders>
+    <NuGetPackageRoot Condition=" '$(NuGetPackageRoot)' == '' ">/Users/mbac/.nuget/packages/</NuGetPackageRoot>
+    <NuGetPackageFolders Condition=" '$(NuGetPackageFolders)' == '' ">/Users/mbac/.nuget/packages/</NuGetPackageFolders>
     <NuGetProjectStyle Condition=" '$(NuGetProjectStyle)' == '' ">PackageReference</NuGetProjectStyle>
-    <NuGetToolVersion Condition=" '$(NuGetToolVersion)' == '' ">5.7.0</NuGetToolVersion>
+    <NuGetToolVersion Condition=" '$(NuGetToolVersion)' == '' ">6.3.0</NuGetToolVersion>
   </PropertyGroup>
   <ItemGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
-    <SourceRoot Include="$([MSBuild]::EnsureTrailingSlash($(NuGetPackageFolders)))" />
+    <SourceRoot Include="/Users/mbac/.nuget/packages/" />
   </ItemGroup>
-  <PropertyGroup>
-    <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
-  </PropertyGroup>
   <ImportGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
-    <Import Project="$(NuGetPackageRoot)microsoft.extensions.configuration.usersecrets\5.0.0\build\netstandard2.0\Microsoft.Extensions.Configuration.UserSecrets.props" Condition="Exists('$(NuGetPackageRoot)microsoft.extensions.configuration.usersecrets\5.0.0\build\netstandard2.0\Microsoft.Extensions.Configuration.UserSecrets.props')" />
+    <Import Project="$(NuGetPackageRoot)microsoft.extensions.configuration.usersecrets/5.0.0/build/netstandard2.0/Microsoft.Extensions.Configuration.UserSecrets.props" Condition="Exists('$(NuGetPackageRoot)microsoft.extensions.configuration.usersecrets/5.0.0/build/netstandard2.0/Microsoft.Extensions.Configuration.UserSecrets.props')" />
   </ImportGroup>
   <PropertyGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
-    <PkgSystem_Diagnostics_EventLog Condition=" '$(PkgSystem_Diagnostics_EventLog)' == '' ">C:\Users\Michael.Bacarella\.nuget\packages\system.diagnostics.eventlog\5.0.0</PkgSystem_Diagnostics_EventLog>
-    <PkgSystem_Net_NameResolution Condition=" '$(PkgSystem_Net_NameResolution)' == '' ">C:\Users\Michael.Bacarella\.nuget\packages\system.net.nameresolution\4.3.0</PkgSystem_Net_NameResolution>
-    <PkgMicrosoft_Extensions_Hosting Condition=" '$(PkgMicrosoft_Extensions_Hosting)' == '' ">C:\Users\Michael.Bacarella\.nuget\packages\microsoft.extensions.hosting\5.0.0</PkgMicrosoft_Extensions_Hosting>
-    <PkgMicrosoft_Extensions_Hosting_WindowsServices Condition=" '$(PkgMicrosoft_Extensions_Hosting_WindowsServices)' == '' ">C:\Users\Michael.Bacarella\.nuget\packages\microsoft.extensions.hosting.windowsservices\5.0.0</PkgMicrosoft_Extensions_Hosting_WindowsServices>
-    <PkgFSharp_Core Condition=" '$(PkgFSharp_Core)' == '' ">C:\Users\Michael.Bacarella\.nuget\packages\fsharp.core\4.7.2</PkgFSharp_Core>
+    <PkgSystem_Diagnostics_EventLog Condition=" '$(PkgSystem_Diagnostics_EventLog)' == '' ">/Users/mbac/.nuget/packages/system.diagnostics.eventlog/5.0.0</PkgSystem_Diagnostics_EventLog>
+    <PkgSystem_Net_NameResolution Condition=" '$(PkgSystem_Net_NameResolution)' == '' ">/Users/mbac/.nuget/packages/system.net.nameresolution/4.3.0</PkgSystem_Net_NameResolution>
+    <PkgMicrosoft_Extensions_Hosting Condition=" '$(PkgMicrosoft_Extensions_Hosting)' == '' ">/Users/mbac/.nuget/packages/microsoft.extensions.hosting/5.0.0</PkgMicrosoft_Extensions_Hosting>
+    <PkgMicrosoft_Extensions_Hosting_WindowsServices Condition=" '$(PkgMicrosoft_Extensions_Hosting_WindowsServices)' == '' ">/Users/mbac/.nuget/packages/microsoft.extensions.hosting.windowsservices/5.0.0</PkgMicrosoft_Extensions_Hosting_WindowsServices>
+    <PkgFSharp_Core Condition=" '$(PkgFSharp_Core)' == '' ">/Users/mbac/.nuget/packages/fsharp.core/6.0.5</PkgFSharp_Core>
   </PropertyGroup>
 </Project>
