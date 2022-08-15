@@ -122,8 +122,8 @@ module Work =
     if m.Groups.Count <> 2 then None
     else Some m.Groups.[1].Value
 
-  let notifyLogin logger username ip =
-    let subject = sprintf "%s logged in from new location %s" username ip in
+  let notifyLogin logger usrname ip =
+    let subject = sprintf "%s logged in from new location %s" usrname ip in
     logger Info subject;
     Mail.send logger "m.bacarella@imerusa.com" subject "[eom]"
 
@@ -178,25 +178,25 @@ module Work =
               | None ->
                 state.Logger Warn "could not match account names in SuccessAudit message";
                 logEventLogEntry state.Logger ent
-              | Some username ->
-                state.Logger Info (sprintf "successful login for %s from IP: %s" username ip);
+              | Some usrname ->
+                state.Logger Info (sprintf "successful login for %s from IP: %s" usrname ip);
                 let shouldNotify =
                   lock state (fun () ->
                     state.LogonFails.[ip] <- 0;
-                    if state.UserSeenIps.ContainsKey username then begin
-                      if List.contains ip state.UserSeenIps.[username] then false
+                    if state.UserSeenIps.ContainsKey usrname then begin
+                      if List.contains ip state.UserSeenIps.[usrname] then false
                       else begin
-                        state.UserSeenIps.[username] <- ip :: state.UserSeenIps.[username];
+                        state.UserSeenIps.[usrname] <- ip :: state.UserSeenIps.[usrname];
                         true
                       end
                     end else begin
-                      state.UserSeenIps.[username] <- [ip];
+                      state.UserSeenIps.[usrname] <- [ip];
                       true
                     end)
                 in
                 if shouldNotify then begin
                   if List.contains ip Settings.ipWhitelist then ()
-                  else Async.Start (async { notifyLogin state.Logger username ip } )
+                  else Async.Start (async { notifyLogin state.Logger usrname ip } )
                 end
             end
           end
